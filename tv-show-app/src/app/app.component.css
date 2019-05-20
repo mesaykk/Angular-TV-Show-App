@@ -12,3 +12,16 @@ button {
   margin: 0px;
 }
 
+.center {
+  margin: auto;
+  background-color: lightgray;
+  width: 50%;
+}
+
+.left {
+  background-color: gray;
+  float: left;
+  height: 100px;
+}
+
+
