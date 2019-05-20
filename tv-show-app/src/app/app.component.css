@@ -1,0 +1,14 @@
+input {
+  width: 40%;
+  height: 25px;
+  border: 1px solid grey;
+  margin: 0px;
+}
+button {
+  background-color: #3265B2;
+  color: white;
+  height: 29px;
+  border: 1px solid grey;
+  margin: 0px;
+}
+
