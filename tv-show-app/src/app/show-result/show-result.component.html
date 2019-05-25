@@ -1,14 +1,21 @@
-<div>
-  <div class="center">
-    <span class="left"><img [src]='tv.image'/></span>
-  </div>
-  <div> 
-    <h2>{{tv.title}}</h2>
-  </div>
-  <div>
-    <p>{{tv.description}}</p>
-  </div>
-  <div>
-    <span>{{tv.cast}}</span>
-  </div>
+<div class="topinfo">
+  <h2 class="title">{{tv.name}}</h2>
+  <section>Premiered: {{tv.premiered}} | Status: {{tv.status}}</section>
+  <section>Rating: {{tv.rating}} | Genres: {{tv.genres}}</section>
+<div class="box"> 
+    <span class="left">
+        <img [src]='tv.image' />
+    </span>    
+    <div class="rightbox">
+        <ul style="list-style: none;">
+          <li class="contents"><b>Schedule:</b> {{tv.schedule}} ({{tv.timezone}})</li>
+          <li class="contents"><b>Official Site:</b> {{tv.officialSite}}</li> 
+          <br>
+          <div>
+            <h3>Summary</h3>
+              <p class="contents">{{tv.summary}}</p>
+          </div>
+        </ul>
+    </div>
+</div>
 </div>
