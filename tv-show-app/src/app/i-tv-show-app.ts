@@ -4,7 +4,7 @@ export interface ITvShowApp {
     genres: string
     premiered: number 
     status: string
-    schedule: String
+    schedule: number
     timezone: string
     officialSite: string
     summary: string

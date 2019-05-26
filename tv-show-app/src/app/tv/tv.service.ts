@@ -10,12 +10,16 @@ interface ITvShowAppData {
   genres: string,
   status: string,
   officialSite: string,
-  timezone: string,
+  timezone:string,
   image: string,
   summary:string,
   premiered: number,
-  rating:  number,
-  schedule: string,
+  rating:  {
+    avarage: number
+  },
+  schedule: {
+      time: number
+  }
 
 }
 
@@ -36,16 +40,15 @@ getShowResult(name: string) {
   private transformToITvShowApp(data: ITvShowAppData) : ITvShowApp{
    return {
       name: data.name,
-       rating: data.rating,
+       rating: data.rating.avarage,
        genres: data.genres,
        premiered: data.premiered,
        status: data.status,
-       schedule: data.schedule, 
+       schedule: data.schedule.time, 
        timezone: data.timezone,
        officialSite: data.officialSite, 
        summary: data.summary, 
        image:'http://static.tvmaze.com/uploads/images/original_untouched/190/476117.jpg'
-
 
 }
   }
