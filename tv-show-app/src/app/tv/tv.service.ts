@@ -10,15 +10,20 @@ interface ITvShowAppData {
   genres: string,
   status: string,
   officialSite: string,
-  timezone:string,
-  image: string,
+  medium: {
+     image: string
+  },
   summary:string,
   premiered: number,
-  network:  [
-    country: {
-      timezone: string,
-    }
-      ],
+  rating: {
+     avarage: number
+  },
+    
+  network:  {
+       country: {
+         timezone: string
+          }
+      },
   schedule: {
       time: number
   }
@@ -47,7 +52,7 @@ getShowResult(name: string) {
        premiered: data.premiered,
        status: data.status,
        schedule: data.schedule.time, 
-       timezone: data.timezone,
+       timezone: data.network.country.timezone,
        officialSite: data.officialSite, 
        summary: data.summary, 
        image:'http://static.tvmaze.com/uploads/images/original_untouched/190/476117.jpg'
