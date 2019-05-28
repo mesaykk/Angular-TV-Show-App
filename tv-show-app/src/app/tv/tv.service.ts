@@ -14,9 +14,11 @@ interface ITvShowAppData {
   image: string,
   summary:string,
   premiered: number,
-  rating:  {
-    avarage: number
-  },
+  network:  [
+    country: {
+      timezone: string,
+    }
+      ],
   schedule: {
       time: number
   }
