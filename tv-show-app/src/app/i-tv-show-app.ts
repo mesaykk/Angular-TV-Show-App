@@ -7,6 +7,7 @@ export interface ITvShowApp {
     schedule: number
     timezone: string
     officialSite: string
+    network: string
     summary: string
     image: string
 }

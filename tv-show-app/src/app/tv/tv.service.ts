@@ -4,30 +4,28 @@ import { environment } from 'src/environments/environment';
 import { ITvShowApp } from '../i-tv-show-app';
 import { map } from 'rxjs/operators';
 
-
 interface ITvShowAppData {
   name: string,
   genres: string,
   status: string,
   officialSite: string,
-  medium: {
-     image: string
+  image: {
+    original: string
   },
-  summary:string,
+  summary: string,
   premiered: number,
   rating: {
-     avarage: number
+    average: number
   },
-    
-  network:  {
-       country: {
-         timezone: string
-          }
-      },
+  network: {
+    country: {
+      timezone: string
+    }
+    name: string
+  },
   schedule: {
-      time: number
+    time: number
   }
-
 }
 
 
@@ -46,17 +44,17 @@ getShowResult(name: string) {
 }
   private transformToITvShowApp(data: ITvShowAppData) : ITvShowApp{
    return {
-      name: data.name,
-       rating: data.rating.avarage,
-       genres: data.genres,
-       premiered: data.premiered,
-       status: data.status,
-       schedule: data.schedule.time, 
-       timezone: data.network.country.timezone,
-       officialSite: data.officialSite, 
-       summary: data.summary, 
-       image:'http://static.tvmaze.com/uploads/images/original_untouched/190/476117.jpg'
-
-}
+    name: data.name,
+    rating: data.rating.average,
+    genres: data.genres,
+    premiered: data.premiered,
+    status: data.status,
+    schedule: data.schedule.time, 
+    timezone: data.network.country.timezone,
+    network: data.network.name,
+    officialSite: data.officialSite, 
+    summary: data.summary, 
+    image: data.image.original
+   }
   }
 }

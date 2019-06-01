@@ -9,13 +9,11 @@
     <div class="rightbox">
         <ul style="list-style: none;">
           <li class="contents"><b>Schedule:</b> {{tv.schedule}} ({{tv.timezone}})</li>
-          <li class="contents"><b>Official Site:</b> {{tv.officialSite}}</li> 
+          <li class="contents"><b>Official Site: </b><a href="{{tv.officialSite}}">{{tv.network}}</a></li>
           <br>
           <div>
             <h3>Summary</h3>
-              <p class="contents">{{tv.summary}}</p>
-              
-              
+            <p id="summary" [innerHTML]="tv.summary"></p>       
           </div>
         </ul>
     </div>
