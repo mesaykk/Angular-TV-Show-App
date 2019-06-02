@@ -35,7 +35,7 @@ interface ITvShowAppData {
 export class TvService {
 
   constructor(private httpClient: HttpClient) { }
-getShowResult(name: string) {
+getShowResult(name: string | number) {
   return this.httpClient.get<ITvShowAppData>(
     `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${name}&appid=${environment.appId}`
   ).pipe(

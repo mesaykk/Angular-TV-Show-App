@@ -1,5 +1,5 @@
 * {
-  font-family: arial,sans-serif;
+  /* font-family: arial,sans-serif; */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -44,8 +44,8 @@ button {
 }
 
 .bottom {
-  position: absolute;
-  top: 550px;
+  position: relative;
+  top: 200px;
   left: 100px;
   width: 80%;
 } 
@@ -54,3 +54,7 @@ h3 {
   background-color: lightgray;
 }
 
+mat-card {
+  margin-left: 100px;
+  margin-right: 100px;
+}

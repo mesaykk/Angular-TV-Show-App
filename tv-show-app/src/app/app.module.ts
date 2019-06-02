@@ -9,11 +9,13 @@ import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TitleSearchComponent } from './title-search/title-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowResultComponent
+    ShowResultComponent,
+    TitleSearchComponent
   ],
   imports: [
     BrowserModule,
