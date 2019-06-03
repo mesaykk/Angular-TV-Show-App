@@ -5,7 +5,15 @@
   margin: 0;
 } 
 
-.fixed-top {
+mat-card {
+  height: 500px;
+  padding: 20px;
+  margin: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
@@ -41,7 +49,7 @@ button {
   height: 29px;
   padding: 5px;
   border: 1px solid #3265B2;
-}
+} */
 
 .bottom {
   position: relative;
@@ -52,9 +60,4 @@ button {
 
 h3 {
   background-color: lightgray;
-}
-
-mat-card {
-  margin-left: 100px;
-  margin-right: 100px;
 }
