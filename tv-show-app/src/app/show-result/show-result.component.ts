@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ITvShowApp } from '../i-tv-show-app';
 import { TvService } from '../tv/tv.service';
+
 
 @Component({
   selector: 'app-show-result',
@@ -9,15 +10,14 @@ import { TvService } from '../tv/tv.service';
 })
 export class ShowResultComponent implements OnInit {
 
-  tv: ITvShowApp
-  constructor(private tvService:TvService) { 
-    // update dummy data based on http://api.tvmaze.com/shows/82
-   
-  }
+  @Input() tv: ITvShowApp
+
+  
+  constructor() { 
+}
 
   ngOnInit() {
-    this.tvService.getShowResult('Game of Thrones')
-    .subscribe(data => this.tv = data);
+ 
   }
 
 }

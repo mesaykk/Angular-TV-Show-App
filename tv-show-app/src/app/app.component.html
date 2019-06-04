@@ -10,8 +10,16 @@
     </div> 
   </nav> -->
 
-  <div class="mat-app-background"><app-title-search></app-title-search></div>
-  <mat-card><div><app-show-result></app-show-result></div></mat-card>
+  <div class="mat-app-background">
+    <app-title-search (searchEvent)="doSearch($event)"> </app-title-search>
+  </div>
+  <mat-card>
+    <div>
+      <app-show-result [tv]="showresult">
+
+      </app-show-result>
+    </div>
+  </mat-card>
 
   
   <div class="bottom"> 
