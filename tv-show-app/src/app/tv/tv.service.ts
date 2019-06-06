@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ITvShowApp } from '../i-tv-show-app';
 import { map } from 'rxjs/operators';
+import { ITvCast } from '../itv-cast';
 
 interface ITvShowAppData {
   name: string,
@@ -27,7 +28,22 @@ interface ITvShowAppData {
     time: number
   }
 }
-
+interface ITvCastData {
+  _embedded: {
+    cast: {
+      person: {
+        name: string
+      },
+      character: {
+        name: string
+        image: {
+          medium: string
+        }
+        url: string
+      }
+    }
+  }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -35,13 +51,14 @@ interface ITvShowAppData {
 export class TvService {
 
   constructor(private httpClient: HttpClient) { }
-getShowResult(name: string | number) {
-  return this.httpClient.get<ITvShowAppData>(
-    `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${name}&appid=${environment.appId}`
-  ).pipe(
-    map(data => this.transformToITvShowApp(data))
-  )
-}
+  getShowResult(name: string | number) {
+    return this.httpClient.get<ITvShowAppData>(
+      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${name}&appid=${environment.appId}`
+    ).pipe(
+      map(data => this.transformToITvShowApp(data))
+    )
+  }
+
   private transformToITvShowApp(data: ITvShowAppData) : ITvShowApp{
    return {
     name: data.name,
@@ -56,5 +73,22 @@ getShowResult(name: string | number) {
     summary: data.summary, 
     image: data.image.original
    }
+  }
+
+   // http://api.tvmaze.com/shows/82?embed=cast&appid=fbSx8kAxuvn7CNZoUWB3lZo_3_5lsOq2
+
+  getTvCast(id: number) {
+    return this.httpClient.get<ITvCastData>(
+      `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed=cast&appid=${environment.appId}`
+      ).pipe(map(data => this.transformtoITvCast(data)))
+  }
+
+  private transformtoITvCast(data: ITvCastData) : ITvCast {
+    return {
+      person: data._embedded.cast.person.name,
+      character: data._embedded.cast.character.name,
+      portrait: data._embedded.cast.character.image.medium,
+      url: data._embedded.cast.character.url
+    }
   }
 }
