@@ -10,12 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleSearchComponent } from './title-search/title-search.component';
+import { TvCastComponent } from './tv-cast/tv-cast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowResultComponent,
-    TitleSearchComponent
+    TitleSearchComponent,
+    TvCastComponent
   ],
   imports: [
     BrowserModule,
