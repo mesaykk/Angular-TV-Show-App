@@ -1,4 +1,5 @@
 export interface ITvShowApp {
+    id: number
     name: string
     rating: number
     genres: string

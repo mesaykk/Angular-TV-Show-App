@@ -11,15 +11,17 @@ export class TvCastComponent implements OnInit {
   cast: ITvCast
 
   constructor(private tvService: TvService ) { 
-    this.cast = {
-      person: 'Colin Ford', 
-      character: 'Joe McAlister',
-      portrait: 'http://static.tvmaze.com/uploads/images/medium_portrait/0/7.jpg',
-      url: 'http://www.tvmaze.com/characters/5/under-the-dome-joe-mcalister'
-    }
+    // dummy data
+    // this.cast = {
+    //   person: 'Colin Ford', 
+    //   character: 'Joe McAlister',
+    //   portrait: 'http://static.tvmaze.com/uploads/images/medium_portrait/0/7.jpg',
+    //   url: 'http://www.tvmaze.com/characters/5/under-the-dome-joe-mcalister'
+    // }
   }
 
   ngOnInit() {
+    // test
     this.tvService.getTvCast(82).subscribe(data => this.cast = data);
   }
 

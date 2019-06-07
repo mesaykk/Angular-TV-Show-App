@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { ITvCast } from '../itv-cast';
 
 interface ITvShowAppData {
+  id: number,
   name: string,
   genres: string,
   status: string,
@@ -61,6 +62,7 @@ export class TvService {
 
   private transformToITvShowApp(data: ITvShowAppData) : ITvShowApp{
    return {
+    id: data.id,
     name: data.name,
     rating: data.rating.average,
     genres: data.genres,
@@ -79,7 +81,7 @@ export class TvService {
 
   getTvCast(id: number) {
     return this.httpClient.get<ITvCastData>(
-      `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed=cast&appid=${environment.appId}`
+      `${environment.baseUrl}api.tvmaze.com/shows/82?embed=cast&appid=${environment.appId}`
       ).pipe(map(data => this.transformtoITvCast(data)))
   }
 
