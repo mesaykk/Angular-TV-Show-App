@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TvService } from '../tv/tv.service';
 import { ITvCast } from '../itv-cast';
 
@@ -9,7 +9,7 @@ import { ITvCast } from '../itv-cast';
 })
 export class TvCastComponent implements OnInit {
   cast: ITvCast
-
+    
   constructor(private tvService: TvService ) { 
     // dummy data
     // this.cast = {
@@ -22,7 +22,13 @@ export class TvCastComponent implements OnInit {
 
   ngOnInit() {
     // test
-    this.tvService.getTvCast(82).subscribe(data => this.cast = data);
+    //this.tvService.getTvCast(this.showId).subscribe(data => this.cast = data);
   }
+
+  testEvent(showId){
+    console.log("This is my test show id: "+ showId)
+  }
+
+  
 
 }

@@ -9,16 +9,15 @@
   </div>
   <mat-card>
     <div>
-      <app-show-result [tv]="showresult"></app-show-result>
+      <app-show-result (castEvent)="testEvent($event)" [tv]="showresult"></app-show-result>
     </div>
   </mat-card>
   
   <div class="bottom"> 
     <div>
-      <h3>Cast</h3>
+      <h3>CasT</h3>
       <app-tv-cast></app-tv-cast>
     </div>
     <div><h3>Episode List</h3></div>
   </div>
-
 </div>

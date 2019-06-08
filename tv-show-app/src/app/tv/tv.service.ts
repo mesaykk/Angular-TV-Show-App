@@ -55,6 +55,7 @@ export class TvService {
   getShowResult(name: string | number) {
     return this.httpClient.get<ITvShowAppData>(
       `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${name}&appid=${environment.appId}`
+      // `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed=cast&appid=${environment.appId}`
     ).pipe(
       map(data => this.transformToITvShowApp(data))
     )
@@ -81,7 +82,7 @@ export class TvService {
 
   getTvCast(id: number) {
     return this.httpClient.get<ITvCastData>(
-      `${environment.baseUrl}api.tvmaze.com/shows/82?embed=cast&appid=${environment.appId}`
+      `${environment.baseUrl}api.tvmaze.com/shows/${id}?embed=cast&appid=${environment.appId}`
       ).pipe(map(data => this.transformtoITvCast(data)))
   }
 

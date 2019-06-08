@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'tv-show-app';
 
   showresult: ITvShowApp
+  
 
 constructor(private tvService: TvService) {
 
@@ -21,7 +22,9 @@ constructor(private tvService: TvService) {
     if(searchValue) {
       const userInput = searchValue.split(',').map(s => s.trim());
       this.tvService.getShowResult 
-      (userInput[0]).subscribe(data => this.showresult = data )
+      (userInput[0]).subscribe(data => {
+        this.showresult = data ;
+      })
     }
   }
 }
