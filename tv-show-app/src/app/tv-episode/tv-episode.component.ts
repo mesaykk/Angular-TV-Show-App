@@ -26,16 +26,19 @@ export class TvEpisodeComponent implements OnInit {
     let epiNumberArr = this.epi.epiNumber.split(',');
     let airdateArr = this.epi.airdate.split(',');
     let epiImageArr = this.epi.epiImage.split(',');
-    let epiSummaryArr = this.epi.epiSummary.split(',');
+    
+    let epiSummaryArr = this.epi.epiSummary.split('</p>')
+    let epiSummaryForm =  '';
 
     for (let i = 0; i < airdateArr.length - 1; i++) {
+      epiSummaryForm = epiSummaryArr[i].replace(",", "</p>");
       result += 
       `<th><img src='${epiImageArr[i]}'/></th>
       <th>${seasonArr[i]}</th>
       <th><a href="${epiUrlArr[i]}">${epiNumberArr[i]}</a></th>
       <th>${epiNameArr[i]}</th>
       <th>${airdateArr[i]}</th>
-      <th><p id="summary">${epiSummaryArr[i]}</p></th>`
+      <th><p id="summary">${epiSummaryForm}</p></th>`
     }
     return result;
   }
@@ -47,33 +50,3 @@ export class TvEpisodeComponent implements OnInit {
   }
 
 }
-
-// <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-//   <!-- Position Column -->
-//   <ng-container matColumnDef="position">
-//     <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-//     <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-//   </ng-container>
-
-//   <!-- Name Column -->
-//   <ng-container matColumnDef="name">
-//     <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-//     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-//   </ng-container>
-
-//   <!-- Weight Column -->
-//   <ng-container matColumnDef="weight">
-//     <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
-//     <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-//   </ng-container>
-
-//   <!-- Symbol Column -->
-//   <ng-container matColumnDef="symbol">
-//     <th mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </th>
-//     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-//   </ng-container>
-
-//   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-//   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-// </table>
