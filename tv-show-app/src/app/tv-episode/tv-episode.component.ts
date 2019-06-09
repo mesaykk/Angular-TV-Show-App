@@ -28,11 +28,12 @@ export class TvEpisodeComponent implements OnInit {
     let epiImageArr = this.epi.epiImage.split(',');
     let epiSummaryArr = this.epi.epiSummary.split(',');
 
-    for (let i = 0; i < epiNameArr.length - 1; i++) {
+    for (let i = 0; i < airdateArr.length - 1; i++) {
       result += 
       `<th><img src='${epiImageArr[i]}'/></th>
       <th>${seasonArr[i]}</th>
       <th><a href="${epiUrlArr[i]}">${epiNumberArr[i]}</a></th>
+      <th>${epiNameArr[i]}</th>
       <th>${airdateArr[i]}</th>
       <th><p id="summary">${epiSummaryArr[i]}</p></th>`
     }
