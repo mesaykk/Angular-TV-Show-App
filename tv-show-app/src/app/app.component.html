@@ -22,18 +22,18 @@
   </div> -->
 
   <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Shows">
+    <mat-tab label="Summary">
       <div>
-        <h3>Shows</h3>
+        <h3>Summary</h3>
         <mat-card>
             <app-show-result [tv]="showResult"></app-show-result> 
         </mat-card>
       </div>
     </mat-tab>
 
-    <mat-tab label="Casts">
+    <mat-tab label="Cast">
       <div>
-        <h3>Casts</h3>
+        <h3>Cast</h3>
         <app-tv-cast [cast]="showResult"></app-tv-cast>
       </div>
     </mat-tab>
