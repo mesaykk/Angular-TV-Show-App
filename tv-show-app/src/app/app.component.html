@@ -8,28 +8,17 @@
     <app-title-search (searchEvent)="doSearch($event)"> </app-title-search>
   </div>
 
-  <!-- <mat-card> -->
-      <!-- <app-show-result (castEvent)="testEvent($event)" [tv]="showResult"></app-show-result> -->
-      <!-- <app-show-result [tv]="showResult"></app-show-result>
-  </mat-card> -->
-  
-  <!-- <div class="bottom"> 
-    <div>
-      <h3>Cast</h3>
-      <app-tv-cast [cast]="showResult"></app-tv-cast>
-    </div>
-    <div><h3>Episode List</h3></div>
-  </div> -->
-
   <mat-tab-group mat-align-tabs="start">
-      <mat-tab label="Main Page">
-          <div>
-            <h3>Main Page</h3>
-            <mat-card>
-                <app-landing></app-landing> 
-            </mat-card>
-          </div>
-        </mat-tab>
+
+    <mat-tab label="Main Page">
+      <div>
+        <h3>Main Page</h3>
+        <mat-card>
+          <app-landing></app-landing>
+        </mat-card> 
+      </div>
+    </mat-tab>
+
     <mat-tab label="Summary">
       <div>
         <h3>Summary</h3>
@@ -52,5 +41,14 @@
         <app-tv-episode [epi]="showResult"></app-tv-episode>
       </div>
     </mat-tab>
+
+    <mat-tab label="About us">
+      <div>
+        <h3>About us</h3>
+        <p>Brows is a collaborative project built by a talented team of student web developers at Kal Academy. Brows is built with Angular.</p>
+        <img src = "https://angular.io/assets/images/logos/angular/angular.svg" height="200">
+      </div>
+    </mat-tab>
+
   </mat-tab-group>
 </div>

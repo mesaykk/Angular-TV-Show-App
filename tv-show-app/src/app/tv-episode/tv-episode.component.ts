@@ -29,18 +29,26 @@ export class TvEpisodeComponent implements OnInit {
     
     let epiSummaryArr = this.epi.epiSummary.split('</p>')
     let epiSummaryForm =  '';
+    let tableTitle = `<tr>
+                        <th>Image</th>
+                        <th>Season</th>
+                        <th>Episode</th>
+                        <th>Episode Name</th>
+                        <th>Air Date</th>
+                        <th>Summary</th>
+                      </tr>`
 
     for (let i = 0; i < airdateArr.length - 1; i++) {
       epiSummaryForm = epiSummaryArr[i].replace(",", "</p>");
       result += 
-      `<table cellspacing='20'><tr><td><img src='${epiImageArr[i]}'/></td>
+      `<tr><td><img src='${epiImageArr[i]}'/></td>
       <td>${seasonArr[i]}</td>
       <td><a href="${epiUrlArr[i]}">${epiNumberArr[i]}</a></td>
       <td>${epiNameArr[i]}</td>
-      <td>${airdateArr[i]}</td>
-      <td><p id="summary">${epiSummaryForm}</p></td></tr></table>`
+      <td class="column5">${airdateArr[i]}</td>
+      <td>${epiSummaryForm}</td></tr>`
     }
-    return result;
+    return tableTitle + result;
   }
 
   getEpiImage() {

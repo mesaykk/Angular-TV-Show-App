@@ -18,7 +18,7 @@ interface ITvShowAppData {
   },
   network: {
     country: {
-      timezone: string
+      timezone: StringConstructor
     }
     name: string
   },

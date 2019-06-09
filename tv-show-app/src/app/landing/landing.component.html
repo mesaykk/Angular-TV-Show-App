@@ -1,16 +1,27 @@
-<div><h3> Welcome to Brows, the best way to browse TV Shows on the web. </h3>
+<div>
+  <h3> Welcome to Brows, the best way to browse TV Shows on the web.</h3>
   <p class="align-purple">To navigate:</p>
   <span>
-  <ol class="align-purple">
-    <li>Simply type the name of the show you're searching for in the above search field.</li>
-    <li>Learn all about your favorite show!</li>
-  </ol>
-  <br>
-</span>
+
+    <ol class="align-purple">
+      <li>Simply type the name of the show you're searching for in the above search field.</li>
+      <li>Learn all about your favorite show!</li>
+    </ol>
+    <br>
+  </span>
+
+  <mat-divider></mat-divider>
+
+  <div *ngIf="home">
+    <h2>Popular TV show !</h2>
+    <div class="grid-container">   
+      <a href="{{home.officialSite1}}"><img [src]='home.image1'/></a>
+      <a href="{{home.officialSite2}}"><img [src]='home.image2'/></a>
+    </div>
+  </div>
+    
 </div>
-<mat-divider></mat-divider>
-<div><br>
-  <h3>About us:</h3>
-  <p>Brows is a collaborative project built by a talented team of student web developers at Kal Academy. Brows is built with Angular.</p>
-  <img src = "https://angular.io/assets/images/logos/angular/angular.svg" height="200">
-</div>
+
+
+<!-- <mat-divider></mat-divider> -->
+

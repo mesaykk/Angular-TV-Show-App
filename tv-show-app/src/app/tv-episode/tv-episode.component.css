@@ -1,16 +1,21 @@
 table {
-  /*border-collapse: collapse;*/
-  border: 1;
+  margin-top: 25px;
+  border-collapse: collapse;
+  border: 2px lightgray;
   width: 100%;
+}
+
+.column5 {
+  width: 300px;
 }
 
 .test td {
   text-align: left;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 .tablestuff thead {
   display: table-header-group;
 }
 
-/* tr:nth-child(even) {background-color: #f2f2f2; color: #303030;} */
+tr:nth-child(even) {background-color: #f2f2f2; color: yellow;}
 

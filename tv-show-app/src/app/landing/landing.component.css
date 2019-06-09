@@ -1,3 +1,15 @@
 .align-purple {
     text-align: left
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 5px;
+    padding-top: 20px;
+  }
+
+  img {
+      float: left;
+  }
+  
