@@ -6,11 +6,17 @@
 } 
 
 mat-card {
-  height: 500px;
+  height: 600px;
   padding: 20px;
   margin: 30px;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+  background-color: gray;
+  color: white;
 }
 
 .bottom {
@@ -22,5 +28,6 @@ mat-card {
 } 
 
 h3 {
-  background-color: lightgray;
+  font-size: 25px;
+  padding-top: 30px;
 }

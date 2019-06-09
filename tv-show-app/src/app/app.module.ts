@@ -7,7 +7,7 @@ import { ShowResultComponent } from './show-result/show-result.component';
 import { TvService } from './tv/tv.service';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule, MatTabsModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleSearchComponent } from './title-search/title-search.component';
 import { TvCastComponent } from './tv-cast/tv-cast.component';
@@ -31,7 +31,8 @@ import { TvCastComponent } from './tv-cast/tv-cast.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatTabsModule
   ],
   exports: [
     FormsModule,

@@ -8,17 +8,41 @@
     <app-title-search (searchEvent)="doSearch($event)"> </app-title-search>
   </div>
 
-  <mat-card>
+  <!-- <mat-card> -->
       <!-- <app-show-result (castEvent)="testEvent($event)" [tv]="showResult"></app-show-result> -->
-      <app-show-result [tv]="showResult"></app-show-result>
-  </mat-card>
+      <!-- <app-show-result [tv]="showResult"></app-show-result>
+  </mat-card> -->
   
-  <div class="bottom"> 
+  <!-- <div class="bottom"> 
     <div>
       <h3>Cast</h3>
       <app-tv-cast [cast]="showResult"></app-tv-cast>
     </div>
     <div><h3>Episode List</h3></div>
-  </div>
+  </div> -->
 
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Shows">
+      <div>
+        <h3>Shows</h3>
+        <mat-card>
+            <app-show-result [tv]="showResult"></app-show-result> 
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Casts">
+      <div>
+        <h3>Casts</h3>
+        <app-tv-cast [cast]="showResult"></app-tv-cast>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Episodes">
+      <div>
+        <h3>Episodes</h3>
+        <div>contents~</div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TvService } from '../tv/tv.service';
 import { ITvShowApp } from '../i-tv-show-app';
 
 @Component({
@@ -31,7 +30,10 @@ export class TvCastComponent implements OnInit {
     let urlArr = this.cast.url.split(',');
     let characterArr = this.cast.character.split(',');
     for (let i = 0; i < personArr.length - 1; i++) {
-      result += `<span><img id='portrait' src='${portraitArr[i]}'/></span><div id="name"><span>Actor #${i + 1}: ${personArr[i]}</span> as <a href="${urlArr[i]}">${characterArr[i]}</a></span></div>`
+      result += 
+      `<div class="grid-item"><span><img id='portrait' src='${portraitArr[i]}'/></span>
+      <div id="name"><span>${personArr[i]}</span> 
+      as <a href="${urlArr[i]}">${characterArr[i]}</a></span></div></div>`
     }
     return result;
   }
