@@ -1,12 +1,12 @@
-<div *ngIf="epi" style="overflow-x:auto;">
-  <table>
+<div *ngIf="epi" style="overflow-x:auto;" class="tablestuff table" >
+  <table border=1>
     <tr>
-      <th>Image</th>
-      <th>Season</th>
+        <!--  <th>Image</th>
+     <th>Season</th>
       <th>Episode</th>
       <th>Episode Name</th>
       <th>Air Date</th>
-      <th>Summary</th>
+      <th>Summary</th> -->
     </tr>
     <tr>
       <div class="table" [innerHTML]=getEpisodes()></div>   

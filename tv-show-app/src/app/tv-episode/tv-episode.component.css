@@ -1,11 +1,15 @@
 table {
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
+  border: 1;
   width: 100%;
 }
 
-th, td {
+table.test td {
   text-align: left;
-  padding: 5px;
+  margin-right: 50%;
+}
+.tablestuff thead {
+  display: table-header-group;
 }
 
 /* tr:nth-child(even) {background-color: #f2f2f2; color: #303030;} */
