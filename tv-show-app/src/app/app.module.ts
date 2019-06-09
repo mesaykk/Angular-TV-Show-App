@@ -11,13 +11,15 @@ import { MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatFor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleSearchComponent } from './title-search/title-search.component';
 import { TvCastComponent } from './tv-cast/tv-cast.component';
+import { TvEpisodeComponent } from './tv-episode/tv-episode.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowResultComponent,
     TitleSearchComponent,
-    TvCastComponent
+    TvCastComponent,
+    TvEpisodeComponent
   ],
   imports: [
     BrowserModule,

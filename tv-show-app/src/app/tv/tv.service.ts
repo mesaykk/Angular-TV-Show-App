@@ -41,9 +41,23 @@ interface ITvShowAppData {
           url: string
         }
       }
+    ],
+    episodes: [
+      {
+        url: string,
+        name: string,
+        season: string,
+        number: string,
+        airdate: string,
+        image: {
+          medium: string
+        },
+        summary: string
+      }
     ]
   }
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -69,8 +83,7 @@ export class TvService {
 
   private transformToITvShowApp(data: ITvShowAppData) : ITvShowApp{
 
-        // Get all elements.
-
+    // Get all elements from the <cast>.
     let myCastArr = data._embedded.cast;
     let people = [];
     let characters = [];
@@ -83,10 +96,40 @@ export class TvService {
       urls.push(myCastArr[i].character.url);
     }
 
+    // Change array to string.
     let peopleStr = people.join(',');
     let charactersStr = characters.join(',');
     let portraitsStr = portraits.join(',');
     let urlsStr = urls.join(',');
+
+    // Get all elements from the <episodes>
+    let myEpiArr = data._embedded.episodes;
+    let epiUrls = [];
+    let epiNames = [];
+    let seasons = [];
+    let epiNumbers = [];
+    let airdates = [];
+    let epiImages = [];
+    let epiSummaries = [];
+    for (let i = 0; i < myEpiArr.length - 1; i++) {
+      epiUrls.push(myEpiArr[i].url);
+      epiNames.push(myEpiArr[i].name);
+      seasons.push(myEpiArr[i].season);
+      epiNumbers.push(myEpiArr[i].number);
+      airdates.push(myEpiArr[i].airdate);
+      epiImages.push(myEpiArr[i].image.medium);
+      epiSummaries.push(myEpiArr[i].summary);
+    }
+    console.log('episode name? ' + epiUrls[0])
+
+    // Change array to string.
+    let epiUrlsStr = epiUrls.join(',');
+    let epiNamesStr = epiNames.join(',');
+    let seasonsStr = seasons.join(',');
+    let epiNumbersStr = epiNumbers.join(',');
+    let airdatesStr = airdates.join(',');
+    let epiImagesStr = epiImages.join(',');
+    let epiSummariesStr = epiSummaries.join(',');
 
    return {
     id: data.id,
@@ -104,7 +147,23 @@ export class TvService {
     person: peopleStr,
     character: charactersStr,
     portrait: portraitsStr,
-    url: urlsStr
+    url: urlsStr,
+    
+    epiUrl: epiUrlsStr,
+    epiName: epiNamesStr,
+    season: seasonsStr,
+    epiNumber: epiNumbersStr,
+    airdate: airdatesStr,
+    epiImage: epiImagesStr,
+    epiSummary: epiSummariesStr
+
+    // epiUrl: data._embedded.episodes[0].url,
+    // epiName: data._embedded.episodes[0].name,
+    // season: data._embedded.episodes[0].season,
+    // epiNumber: data._embedded.episodes[0].number,
+    // airdate: data._embedded.episodes[0].airdate,
+    // epiImage: data._embedded.episodes[0].image.medium,
+    // epiSummary: data._embedded.episodes[0].summary,
    }
   }
 }
