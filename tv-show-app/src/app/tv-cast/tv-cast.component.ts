@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TvService } from '../tv/tv.service';
-import { ITvCast } from '../itv-cast';
+import { ITvShowApp } from '../i-tv-show-app';
 
 @Component({
   selector: 'app-tv-cast',
@@ -8,9 +8,9 @@ import { ITvCast } from '../itv-cast';
   styleUrls: ['./tv-cast.component.css']
 })
 export class TvCastComponent implements OnInit {
-  cast: ITvCast
+  @Input() cast: ITvShowApp // auto import
     
-  constructor(private tvService: TvService ) { 
+  constructor() { 
     // dummy data
     // this.cast = {
     //   person: 'Colin Ford', 
@@ -21,13 +21,12 @@ export class TvCastComponent implements OnInit {
   }
 
   ngOnInit() {
-    // test
-    //this.tvService.getTvCast(this.showId).subscribe(data => this.cast = data);
+
   }
 
-  testEvent(showId){
-    console.log("This is my test show id: "+ showId)
-  }
+  // testEvent(showId){
+  //   console.log("This is my test show id: "+ showId)
+  // }
 
   
 
