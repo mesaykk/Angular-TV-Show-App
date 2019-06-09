@@ -24,10 +24,15 @@ export class TvCastComponent implements OnInit {
 
   }
 
-  // testEvent(showId){
-  //   console.log("This is my test show id: "+ showId)
-  // }
-
-  
-
+  getCast() {
+    let result = '';
+    let portraitArr = this.cast.portrait.split(',');
+    let personArr = this.cast.person.split(',');
+    let urlArr = this.cast.url.split(',');
+    let characterArr = this.cast.character.split(',');
+    for (let i = 0; i < personArr.length - 1; i++) {
+      result += `<span><img id='portrait' src='${portraitArr[i]}'/></span><div id="name"><span>Actor #${i + 1}: ${personArr[i]}</span> as <a href="${urlArr[i]}">${characterArr[i]}</a></span></div>`
+    }
+    return result;
+  }
 }

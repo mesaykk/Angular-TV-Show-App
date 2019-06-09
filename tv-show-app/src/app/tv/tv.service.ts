@@ -68,11 +68,31 @@ export class TvService {
   }
 
   private transformToITvShowApp(data: ITvShowAppData) : ITvShowApp{
+
+        // Get all elements.
+
+    let myCastArr = data._embedded.cast;
+    let people = [];
+    let characters = [];
+    let portraits = [];
+    let urls = [];
+    for (let i = 0; i < myCastArr.length - 1; i++) {
+      people.push(myCastArr[i].person.name);
+      characters.push(myCastArr[i].character.name);
+      portraits.push(myCastArr[i].character.image.medium);
+      urls.push(myCastArr[i].character.url);
+    }
+
+    let peopleStr = people.join(',');
+    let charactersStr = characters.join(',');
+    let portraitsStr = portraits.join(',');
+    let urlsStr = urls.join(',');
+
    return {
     id: data.id,
     name: data.name,
     rating: data.rating.average,
-    genres: data.genres, // all elements from one array.
+    genres: data.genres, 
     premiered: data.premiered,
     status: data.status,
     schedule: data.schedule.time,
@@ -81,10 +101,10 @@ export class TvService {
     officialSite: data.officialSite,
     summary: data.summary,
     image: data.image.original,  
-    person: data._embedded.cast[0].person.name,
-    character: data._embedded.cast[0].character.name,
-    portrait: data._embedded.cast[0].character.image.medium,
-    url: data._embedded.cast[0].character.url 
+    person: peopleStr,
+    character: charactersStr,
+    portrait: portraitsStr,
+    url: urlsStr
    }
   }
 }
