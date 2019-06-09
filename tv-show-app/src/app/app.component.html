@@ -7,16 +7,16 @@
   <div class="mat-app-background">
     <app-title-search (searchEvent)="doSearch($event)"> </app-title-search>
   </div>
+
   <mat-card>
-    <div>
-      <app-show-result [tv]="showresult"></app-show-result>
-    </div>
+      <!-- <app-show-result (castEvent)="testEvent($event)" [tv]="showResult"></app-show-result> -->
+      <app-show-result [tv]="showResult"></app-show-result>
   </mat-card>
   
   <div class="bottom"> 
     <div>
       <h3>Cast</h3>
-      <app-tv-cast></app-tv-cast>
+      <app-tv-cast [cast]="showResult"></app-tv-cast>
     </div>
     <div><h3>Episode List</h3></div>
   </div>

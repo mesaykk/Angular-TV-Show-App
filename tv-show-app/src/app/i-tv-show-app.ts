@@ -3,12 +3,16 @@ export interface ITvShowApp {
     name: string
     rating: number
     genres: string
-    premiered: number 
+    premiered: string
     status: string
-    schedule: number
+    schedule: string
     timezone: string
     officialSite: string
     network: string
     summary: string
     image: string
+    person: string 
+    character: string
+    portrait: string
+    url: string
 }
