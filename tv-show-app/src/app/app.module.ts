@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitleSearchComponent } from './title-search/title-search.component';
 import { TvCastComponent } from './tv-cast/tv-cast.component';
 import { TvEpisodeComponent } from './tv-episode/tv-episode.component';
+import { LandingComponent } from './landing/landing.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { TvEpisodeComponent } from './tv-episode/tv-episode.component';
     ShowResultComponent,
     TitleSearchComponent,
     TvCastComponent,
-    TvEpisodeComponent
+    TvEpisodeComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { TvEpisodeComponent } from './tv-episode/tv-episode.component';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDividerModule
   ],
   exports: [
     FormsModule,
