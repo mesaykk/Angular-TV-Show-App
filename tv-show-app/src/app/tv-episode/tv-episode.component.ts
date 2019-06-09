@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ITvShowApp } from '../i-tv-show-app';
 import { TvService } from '../tv/tv.service';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-tv-episode',
@@ -34,7 +33,7 @@ export class TvEpisodeComponent implements OnInit {
     for (let i = 0; i < airdateArr.length - 1; i++) {
       epiSummaryForm = epiSummaryArr[i].replace(",", "</p>");
       result += 
-      `<table mat-table><tr><td><img src='${epiImageArr[i]}'/></td>
+      `<table cellspacing='20'><tr><td><img src='${epiImageArr[i]}'/></td>
       <td>${seasonArr[i]}</td>
       <td><a href="${epiUrlArr[i]}">${epiNumberArr[i]}</a></td>
       <td>${epiNameArr[i]}</td>
