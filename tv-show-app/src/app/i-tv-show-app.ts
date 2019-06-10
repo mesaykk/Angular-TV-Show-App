@@ -11,20 +11,12 @@ export interface ITvShowApp {
     network: string
     summary: string
     image: string
-
+    // cast
     person: string 
     character: string
     portrait: string
     url: string
-
-    // season: number
-    // episodeName: string
-    // episodeNumber: number
-    // airdate: number
-    // airtime: number
-    // episodeImage: string
-    // episodeSummary: string
-
+    // episode
     epiUrl: string
     epiName: string
     season: string

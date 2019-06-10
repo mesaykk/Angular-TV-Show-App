@@ -4,7 +4,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     padding: 5px;
     padding-top: 20px;
   }

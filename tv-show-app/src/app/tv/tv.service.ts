@@ -18,7 +18,7 @@ interface ITvShowAppData {
   },
   network: {
     country: {
-      timezone: StringConstructor
+      timezone: string
     }
     name: string
   },
@@ -44,14 +44,14 @@ interface ITvShowAppData {
     ],
     episodes: [
       {
-        url: string,
-        name: string,
-        season: string,
-        number: string,
-        airdate: string,
+        url: string
+        name: string
+        season: string
+        number: string
+        airdate: string
         image: {
           medium: string
-        },
+        }
         summary: string
       }
     ]
@@ -97,10 +97,10 @@ export class TvService {
     }
 
     // Change array to string.
-    let peopleStr = people.join(',');
-    let charactersStr = characters.join(',');
-    let portraitsStr = portraits.join(',');
-    let urlsStr = urls.join(',');
+    let peopleStr = JSON.stringify(people);
+    let charactersStr = JSON.stringify(characters);
+    let portraitsStr = JSON.stringify(portraits);
+    let urlsStr = JSON.stringify(urls);
 
     // Get all elements from the <episodes>
     let myEpiArr = data._embedded.episodes;
@@ -120,16 +120,15 @@ export class TvService {
       epiImages.push(myEpiArr[i].image.medium);
       epiSummaries.push(myEpiArr[i].summary);
     }
-    console.log('episode name? ' + epiUrls[0])
 
     // Change array to string.
-    let epiUrlsStr = epiUrls.join(',');
-    let epiNamesStr = epiNames.join(',');
-    let seasonsStr = seasons.join(',');
-    let epiNumbersStr = epiNumbers.join(',');
-    let airdatesStr = airdates.join(',');
-    let epiImagesStr = epiImages.join(',');
-    let epiSummariesStr = epiSummaries.join(',');
+    let epiUrlsStr = JSON.stringify(epiUrls);
+    let epiNamesStr = JSON.stringify(epiNames);
+    let seasonsStr = JSON.stringify(seasons);
+    let epiNumbersStr = JSON.stringify(epiNumbers);
+    let airdatesStr = JSON.stringify(airdates);
+    let epiImagesStr = JSON.stringify(epiImages);
+    let epiSummariesStr = JSON.stringify(epiSummaries);
 
    return {
     id: data.id,
@@ -156,14 +155,6 @@ export class TvService {
     airdate: airdatesStr,
     epiImage: epiImagesStr,
     epiSummary: epiSummariesStr
-
-    // epiUrl: data._embedded.episodes[0].url,
-    // epiName: data._embedded.episodes[0].name,
-    // season: data._embedded.episodes[0].season,
-    // epiNumber: data._embedded.episodes[0].number,
-    // airdate: data._embedded.episodes[0].airdate,
-    // epiImage: data._embedded.episodes[0].image.medium,
-    // epiSummary: data._embedded.episodes[0].summary,
    }
   }
 }

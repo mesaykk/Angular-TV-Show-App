@@ -25,10 +25,10 @@ export class TvCastComponent implements OnInit {
 
   getCast() {
     let result = '';
-    let portraitArr = this.cast.portrait.split(',');
-    let personArr = this.cast.person.split(',');
-    let urlArr = this.cast.url.split(',');
-    let characterArr = this.cast.character.split(',');
+    let portraitArr = JSON.parse(this.cast.portrait);
+    let personArr = JSON.parse(this.cast.person);
+    let urlArr = JSON.parse(this.cast.url);
+    let characterArr = JSON.parse(this.cast.character);
     for (let i = 0; i < personArr.length - 1; i++) {
       result += 
       `<div class="grid-item"><span><img id='portrait' src='${portraitArr[i]}'/></span>
