@@ -41,7 +41,7 @@ interface ITvShowAppData {
           url: string
         }
       }
-    ],
+    ]
     episodes: [
       {
         url: string
