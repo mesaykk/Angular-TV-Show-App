@@ -2,6 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+import { TvService } from './tv/tv.service';
+import { TvServiceFake } from './tv/tv.service.fake';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -11,6 +14,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [{provide: TvService, useClass: TvServiceFake}],
     }).compileComponents();
   }));
 
