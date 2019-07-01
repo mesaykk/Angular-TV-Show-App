@@ -4,12 +4,17 @@ import { AppComponent } from './app.component';
 
 import { TvService } from './tv/tv.service';
 import { TvServiceFake } from './tv/tv.service.fake';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule
       ],
       declarations: [
         AppComponent
