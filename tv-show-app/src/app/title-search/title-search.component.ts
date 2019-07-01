@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { TvService } from '../tv/tv.service';
 import { debounceTime } from 'rxjs/operators';
 
 
@@ -14,7 +13,7 @@ export class TitleSearchComponent implements OnInit {
 
   search = new FormControl('',[Validators.minLength(3)])
 
-  constructor(private tvservice: TvService) { }
+  constructor() { }
 
   ngOnInit() {
     this.search.valueChanges

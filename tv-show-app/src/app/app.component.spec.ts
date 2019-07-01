@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TvService } from './tv/tv.service';
 import { TvServiceFake } from './tv/tv.service.fake';
 
@@ -9,7 +9,8 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ],
       declarations: [
         AppComponent
