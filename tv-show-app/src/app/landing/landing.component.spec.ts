@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LandingComponent } from './landing.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 describe('LandingComponent', () => {
   let component: LandingComponent;
@@ -8,6 +10,9 @@ describe('LandingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        MatDividerModule
+      ],
       declarations: [ LandingComponent ]
     })
     .compileComponents();

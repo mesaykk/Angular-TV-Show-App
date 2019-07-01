@@ -6,6 +6,9 @@ import { TvService } from './tv/tv.service';
 import { TvServiceFake } from './tv/tv.service.fake';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule, MatTabsModule } from '@angular/material';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -14,8 +17,16 @@ describe('AppComponent', () => {
         RouterTestingModule,
         BrowserAnimationsModule,
         FormsModule,
-        ReactiveFormsModule
-        HttpClientTestingModule
+        ReactiveFormsModule,
+        HttpClientTestingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatCardModule,
+        MatTabsModule,
+        MatDividerModule
       ],
       declarations: [
         AppComponent
