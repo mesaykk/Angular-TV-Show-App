@@ -3,6 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ITvShowApp } from '../i-tv-show-app';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+export interface ITvService {
+  getShowResult(name: string | number):
+  Observable<ITvShowApp>
+}
 
 interface ITvShowAppData {
   id: number,
